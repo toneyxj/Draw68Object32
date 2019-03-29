@@ -11,6 +11,7 @@ import com.moxi.handwritinglibs.model.WriteModel.WLine;
 import com.moxi.handwritinglibs.model.WriteModel.WMoreLine;
 import com.moxi.handwritinglibs.model.WriteModel.WPoint;
 import com.moxi.handwritinglibs.model.WriteModel.WritePageData;
+import com.moxi.writeNote.listener.ChangeToTextListener;
 import com.moxi.writeNote.myScript.exception.NullPointerExceptionEngine;
 import com.myscript.iink.Configuration;
 import com.myscript.iink.ContentPackage;
@@ -134,30 +135,38 @@ public class MyScriptService {
     private final int maxLeng=100;
     private List<PointerEvent> pointerEvents;
 
-    public synchronized void addCoordinate(final WritePageData data){
+    public synchronized void addCoordinate(final WritePageData data, final ChangeToTextListener listener){
         new Thread(new Runnable() {
             @Override
             public void run() {
-                int is=data.drawMiddleLines.size();
-                for (int i = 0; i < is; i++) {
-                    WMoreLine mline=data.drawMiddleLines.get(i);
-                    if (mline.status==0){
-                        int i1s=mline.MoreLines.size();
-                        for (int i1 = 0; i1 < i1s; i1++) {
-                            addCoordinate(mline.MoreLines.get(i1));
+                try {
+                    int is=data.drawMiddleLines.size();
+                    for (int i = 0; i < is; i++) {
+                        WMoreLine mline=data.drawMiddleLines.get(i);
+                        if (mline.status==0){
+                            int i1s=mline.MoreLines.size();
+                            for (int i1 = 0; i1 < i1s; i1++) {
+                                addCoordinate(mline.MoreLines.get(i1));
+                            }
                         }
                     }
+                    int size=data.mainLines.size();
+                    for (int i = 0; i <size ; i++) {
+                        addCoordinate(data.mainLines.get(i));
+                    }
+                }catch (Exception e){
+                    e.printStackTrace();
+                    if (listener!=null){
+                        listener.onChangeFaile(e.getMessage());
+                    }
                 }
-                int size=data.mainLines.size();
-                for (int i = 0; i <size ; i++) {
-                    addCoordinate(data.mainLines.get(i));
-                }
+
             }
         }).start();
 
     }
 
-    private void addCoordinate(WLine line){
+    private void addCoordinate(WLine line) throws Exception {
         if (line==null||line.getPoints().size()<3)return;
         List<WPoint> lines=line.getPoints();
         int size=lines.size();
@@ -172,7 +181,7 @@ public class MyScriptService {
             }
         }
     }
-    private void addCoordinate(int action, WPoint point) {
+    private void addCoordinate(int action, WPoint point) throws Exception {
         if(pointerEvents==null){
             pointerEvents=new ArrayList<>();
         }

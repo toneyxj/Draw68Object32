@@ -48,7 +48,7 @@ public class MyScriptManager implements IEditorListener2 {
             listener.onChangeFaile("");
             return;
         }
-        myScriptService.addCoordinate(data);
+        myScriptService.addCoordinate(data, listener);
     }
 
     @Override

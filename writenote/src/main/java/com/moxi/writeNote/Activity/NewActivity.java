@@ -295,6 +295,8 @@ public class NewActivity extends WriteBaseActivity implements View.OnClickListen
             public void onChangeSucess(String value) {
                 dialogShowOrHide(false, "");
                 APPLog.e("onChangeSucess:" + value);
+                write_view.setCanDraw(false, 6);
+                EditeTextActivity.startEditeTextActivity(NewActivity.this,value);
             }
 
             @Override
@@ -530,7 +532,6 @@ public class NewActivity extends WriteBaseActivity implements View.OnClickListen
 //                });
                 break;
             case R.id.back_last://撤销
-                int i=10/0;
                 write_view.backLastDraw(true);
                 break;
             case R.id.recover_next://恢复
