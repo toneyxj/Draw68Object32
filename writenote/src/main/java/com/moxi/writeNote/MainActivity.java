@@ -195,7 +195,6 @@ public class MainActivity extends WriteBaseActivity implements View.OnClickListe
                 onBackPressed();
                 break;
             case R.id.setting://设置
-                int iii=10/0;
                 if (isSelect()) {
                     changeSelect();
                     return;
