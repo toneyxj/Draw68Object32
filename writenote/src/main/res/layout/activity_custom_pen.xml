@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_custom_pen"
+    android:layout_width="match_parent"
+    android:padding="2dp"
+    android:background="@drawable/arc20_di_white_bian_back"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/moxi_text_size_22"
+        android:text="标题"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/current_pen_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/moxi_text_size_18"
+        android:text="当前画笔：7"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorBlack"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginRight="20dp">
+    <ImageView
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@mipmap/setting_jian"/>
+    <com.moxi.writeNote.view.ProgressView
+        android:id="@+id/current_progress"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="16dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:src="@mipmap/setting_add"
+        android:id="@+id/add" />
+</LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/moxi_text_size_18"
+        android:text="效果预览:"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorBlack"/>
+    <com.moxi.writeNote.view.Preview
+        android:id="@+id/pre_view"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="2dp"
+        android:background="@drawable/back_black"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="horizontal">
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/insure"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:background="@drawable/arc_di_black"
+            android:textColor="@color/colorWihte"
+            android:textSize="@dimen/moxi_text_size_20"
+            android:gravity="center"
+            android:text="确定"
+            />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="3"/>
+
+        <Button
+            android:id="@+id/quit"
+            android:layout_width="130dp"
+            android:layout_height="50dp"
+            android:background="@drawable/arc_di_black"
+            android:textColor="@color/colorWihte"
+            android:textSize="@dimen/moxi_text_size_20"
+            android:gravity="center"
+            android:text="取消"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+</LinearLayout>

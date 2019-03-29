@@ -1,0 +1,37 @@
+-- Merging decision tree log ---
+manifest
+ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+	package
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:11-64
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+	android:versionCode
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml:1:1-67
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+uses-sdk
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		ADDED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml
+		INJECTED from H:\workespace\moxiwk\Draw68Object32\UIReferenceImplementation\src\main\AndroidManifest.xml

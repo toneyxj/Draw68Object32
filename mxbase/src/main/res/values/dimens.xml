@@ -1,0 +1,42 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="moxi_text_size_14">18sp</dimen>
+    <dimen name="moxi_text_size_15">19sp</dimen>
+    <dimen name="moxi_text_size_16">20sp</dimen>
+    <dimen name="moxi_text_size_18">22sp</dimen>
+    <dimen name="moxi_text_size_20">24sp</dimen>
+    <dimen name="moxi_text_size_21">25sp</dimen>
+    <dimen name="moxi_text_size_24">28sp</dimen>
+    <dimen name="moxi_text_size_22">26sp</dimen>
+    <dimen name="moxi_text_size_26">30sp</dimen>
+    <dimen name="moxi_text_size_28">32sp</dimen>
+
+    <dimen name="moxi_text_size_14dp">18dp</dimen>
+    <dimen name="moxi_text_size_15dp">19dp</dimen>
+    <dimen name="moxi_text_size_16dp">20dp</dimen>
+    <dimen name="moxi_text_size_18dp">22dp</dimen>
+    <dimen name="moxi_text_size_20dp">24dp</dimen>
+    <dimen name="moxi_text_size_24dp">28dp</dimen>
+    <dimen name="moxi_text_size_22dp">26dp</dimen>
+    <dimen name="page_index_size">30dp</dimen>
+    <dimen name="moxi_text_size_26dp">30dp</dimen>
+    <dimen name="moxi_text_size_28dp">32dp</dimen>
+    <dimen name="bottom_off_page">60dp</dimen>
+    <dimen name="height_50">60dp</dimen>
+    <dimen name="height_100">120dp</dimen>
+    <dimen name="height_65dp">75dp</dimen>
+    <dimen name="height_80dp">90dp</dimen>
+    <dimen name="height_40dp">50dp</dimen>
+    <dimen name="widget_40dp">45dp</dimen>
+    <dimen name="title_left_size">28sp</dimen>
+    <dimen name="title_size">32sp</dimen>
+    <dimen name="title_right_size">28sp</dimen>
+    <dimen name="line">1dp</dimen>
+    <dimen name="title_height">80dp</dimen>
+    <dimen name="seeting_width">800dp</dimen>
+    <dimen name="seeting_img_item">105dp</dimen>
+
+</resources>

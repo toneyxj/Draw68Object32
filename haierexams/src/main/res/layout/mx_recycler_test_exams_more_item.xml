@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginBottom="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/rectangle"
+    android:orientation="vertical"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:paddingTop="5dp">
+
+    <TextView
+        android:id="@+id/tv_exams_item_title"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:ellipsize="end"
+        android:lineSpacingExtra="14dp"
+        android:maxLines="3"
+        android:padding="10dp"
+        android:text="2015-2016学年山东省青岛市高一上学期检测试题"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="42dp">
+
+        <ImageView
+            android:id="@+id/state_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/mx_img_practice_done"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_exams_item_point"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:background="@color/colorBlack"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text="查看解析"
+            android:textColor="@color/colorWihte"
+            android:textSize="@dimen/moxi_text_size_22"
+            android:textStyle="bold"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dip"
+        android:background="@color/colorBlack" />
+
+    <TextView
+        android:id="@+id/tv_exams_item_subject"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="20dip"
+        android:layout_marginTop="15dip"
+        android:gravity="center"
+        android:text="数学"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24" />
+</LinearLayout>

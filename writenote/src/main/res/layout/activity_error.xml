@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/title_height"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:paddingLeft="16dp"
+      android:paddingRight="11dp">
+
+    <TextView
+        android:id="@+id/show_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@drawable/white_to_font"
+        android:drawableLeft="@mipmap/back"
+        android:drawablePadding="10dp"
+        android:gravity="center_vertical"
+        android:text="错误日志"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/title_left_size"
+        android:textStyle="bold" />
+
+  </LinearLayout>
+
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1dp"
+      android:background="@color/color_line" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/error_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textSize="30sp"
+        android:layout_margin="15dp" />
+
+    <TextView
+        android:id="@+id/error_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:textSize="24sp"
+        android:scrollbars = "vertical"/>
+  </LinearLayout>
+
+</LinearLayout>

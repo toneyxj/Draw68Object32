@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Draw68Object32.iml" filepath="$PROJECT_DIR$/Draw68Object32.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UIReferenceImplementation/UIReferenceImplementation.iml" filepath="$PROJECT_DIR$/UIReferenceImplementation/UIReferenceImplementation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/haierexams/haierexams.iml" filepath="$PROJECT_DIR$/haierexams/haierexams.iml" />
+      <module fileurl="file://$PROJECT_DIR$/handwritinglibs/handwritinglibs.iml" filepath="$PROJECT_DIR$/handwritinglibs/handwritinglibs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mxbase/mxbase.iml" filepath="$PROJECT_DIR$/mxbase/mxbase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/writenote/writenote.iml" filepath="$PROJECT_DIR$/writenote/writenote.iml" />
+    </modules>
+  </component>
+</project>

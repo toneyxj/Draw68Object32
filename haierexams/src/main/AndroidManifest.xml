@@ -1,0 +1,60 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.moxi.haierexams">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <application
+        android:name=".application.HaierExamsApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.MXPracticeActivity"
+            android:exported="true"
+            android:finishOnTaskLaunch="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MXWriteHomeWorkActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MXExamsListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MXRequirementOptionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MXHistoryActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".activity.WrongSubjectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.MXErrorExamsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.SynchronousActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.ExamsTestActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <service
+            android:name=".db.DownDbService"
+            android:enabled="true"
+            android:exported="true"></service>
+    </application>
+
+</manifest>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <LinearLayout
+            android:id="@+id/ll_requirement_option_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:src="@mipmap/mx_img_back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:text="好题天天练"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_24" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="个性化选择"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorBlack" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="学段"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_requirement_option_xueduan"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:overScrollMode="never"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/moxi_shape_dash_gray_1dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="学期"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_requirement_option_xueqi"
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:overScrollMode="never"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:scrollbars="none"></android.support.v7.widget.RecyclerView>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@drawable/moxi_shape_dash_gray_1dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:text="教材"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_requirement_option_jiaocai"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:overScrollMode="never"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:scrollbars="none"
+        android:visibility="gone"></android.support.v7.widget.RecyclerView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="200dp"
+        android:layout_height="80dp">
+
+        <TextView
+            android:id="@+id/tv_requirement_option_sure"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/moxi_shape_black_corner_35"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="确定"
+            android:textColor="@color/colorWihte"
+            android:textSize="@dimen/moxi_text_size_24" />
+
+    </RelativeLayout>
+</LinearLayout>

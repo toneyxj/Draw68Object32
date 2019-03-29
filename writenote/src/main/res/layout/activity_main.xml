@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.mx.mxbase.view.MultiOntouchFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWihte"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_height"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="16dp"
+            android:paddingRight="11dp">
+
+            <TextView
+                android:id="@+id/show_title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_to_font"
+                android:drawableLeft="@mipmap/back"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/main_name"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/title_left_size"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/page_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/title_right_size"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/white_to_font"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="@string/setting"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/new_marks"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/white_to_font"
+                android:gravity="center_vertical"
+                android:padding="5dp"
+                android:text="@string/new_floder"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/select"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/white_to_font"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:text="@string/select"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/sort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="12dp"
+                android:background="@drawable/white_to_font"
+                android:drawableLeft="@mipmap/sort_style"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/color_line" />
+
+        <com.mx.mxbase.view.SildeFrameLayout
+            android:id="@+id/silde_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <GridView
+                android:id="@+id/write_item"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:horizontalSpacing="0dp"
+                android:listSelector="@drawable/white_to_font"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="0dp" />
+        </com.mx.mxbase.view.SildeFrameLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_65dp">
+
+            <TextView
+                android:id="@+id/paste_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:background="@drawable/arc_di_black"
+                android:paddingBottom="8dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="8dp"
+                android:text="@string/paste"
+                android:textColor="@color/colorWihte"
+                android:textSize="@dimen/moxi_text_size_22"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/selec_control"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="16dp"
+                android:orientation="horizontal"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/arc_di_black"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/delete"
+                    android:textColor="@color/colorWihte"
+                    android:textSize="@dimen/moxi_text_size_22"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/move"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/arc_di_black"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="30dp"
+                    android:paddingTop="8dp"
+                    android:text="@string/move"
+                    android:textColor="@color/colorWihte"
+                    android:textSize="@dimen/moxi_text_size_22"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/last_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_to_font"
+                    android:padding="10dp"
+                    android:src="@mipmap/write_left" />
+
+                <TextView
+                    android:id="@+id/show_index"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginRight="12dp"
+                    android:text="1/2"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/page_index_size"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/next_page"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/white_to_font"
+                    android:padding="10dp"
+                    android:src="@mipmap/write_right" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</com.mx.mxbase.view.MultiOntouchFrameLayout>

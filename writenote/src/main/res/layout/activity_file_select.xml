@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="11dp">
+
+        <TextView
+            android:id="@+id/back_item"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_to_font"
+            android:drawableLeft="@mipmap/back"
+            android:drawablePadding="10dp"
+            android:lines="1"
+            android:ellipsize="start"
+            android:gravity="center_vertical"
+            android:text="@string/back_mian"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/index_page"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="25dp"
+            android:layout_marginLeft="10dp"
+            android:text="1/1"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/color_line" />
+
+    <com.mx.mxbase.view.SildeFrameLayout
+        android:id="@+id/silde_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <GridView
+            android:id="@+id/grid_items"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="30dp"
+            android:listSelector="@color/transparent"
+            android:numColumns="5"
+            android:verticalSpacing="30dp" />
+    </com.mx.mxbase.view.SildeFrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/color_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/sd_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/di_white_bian_font"
+            android:padding="15dp"
+            android:text="内部存储"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tf_card"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:padding="15dp"
+            android:text="外部存储"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="20dp"
+            android:text="长按选取文件"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_20dp" />
+    </LinearLayout>
+</LinearLayout>

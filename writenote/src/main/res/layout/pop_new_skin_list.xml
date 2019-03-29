@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dotted_line"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <com.moxi.writeNote.view.NoGrigView
+            android:id="@+id/back_gride"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:horizontalSpacing="10dp"
+            android:listSelector="@drawable/white_to_font"
+            android:numColumns="7"
+            android:verticalSpacing="10dp" />
+        <RadioGroup
+            android:id="@+id/group_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/only_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="单页替换"
+                android:background="@null"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="50dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"/>
+            <RadioButton
+                android:id="@+id/all_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:text="整体替换"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="50dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"/>
+        </RadioGroup>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/image_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-3dp"
+        android:layout_marginLeft="100dp"
+        android:layout_gravity="bottom"
+        android:src="@mipmap/next_index"/>
+</LinearLayout>

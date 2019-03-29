@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/action_click"
+    android:layout_width="150dip"
+    android:layout_height="180dip">
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="150dip">
+
+        <TextView
+            android:id="@+id/num_wrong"
+            android:text="15"
+            android:gravity="center"
+            android:padding="30dp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:background="@drawable/wrong_suject_shape"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:textSize="40sp"/>
+
+        <ImageView
+            android:id="@+id/top_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:src="@mipmap/top_icon"/>
+
+    </RelativeLayout>
+    
+    <RelativeLayout
+
+        android:layout_below="@id/title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/subject_icon"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/top_icon"/>
+
+            <TextView
+                android:id="@+id/subject_name"
+                android:text="语文"
+                android:layout_marginLeft="8dip"
+                android:layout_toRightOf="@+id/subject_icon"
+                android:layout_width="wrap_content"
+                android:layout_centerVertical="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="@dimen/moxi_text_size_22"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>

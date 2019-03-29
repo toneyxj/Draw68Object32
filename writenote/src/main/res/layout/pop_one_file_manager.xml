@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dotted_line"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+<!--  单个文件管理pop -->
+    <TextView
+        android:id="@+id/export_pdf"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="导出pdf"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+    <TextView
+        android:id="@+id/export_photo"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="导出图片"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+    <TextView
+        android:id="@+id/delete"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="@string/delete"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+    <TextView
+        android:id="@+id/rename"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="重命名"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+
+    <TextView
+        android:id="@+id/setting_page"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="@string/setting_page_stype"
+        android:visibility="gone"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+</LinearLayout>

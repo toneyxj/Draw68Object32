@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/mx_base_title_layout" />
+
+    <LinearLayout
+        android:id="@+id/ll_bottom_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/rl_page_last"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/img_last_zan_wei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/img_home_work_left"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/moxi_shape_black_corner_35"
+                android:gravity="center"
+                android:text="上一题"
+                android:textColor="@color/colorWihte"
+                android:textSize="@dimen/moxi_text_size_24" />
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/tv_home_work_page_count"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="0/0"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24" />
+
+        <RelativeLayout
+            android:id="@+id/rl_page_next"
+            android:layout_width="140dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_vertical">
+
+            <ImageView
+                android:id="@+id/img_next_zan_wei"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/img_home_work_right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/moxi_shape_black_corner_35"
+                android:gravity="center"
+                android:text="下一题"
+                android:textColor="@color/colorWihte"
+                android:textSize="@dimen/moxi_text_size_24" />
+
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/page_up_down_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/img_home_work_up"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="@dimen/moxi_text_size_14dp"
+                android:background="@drawable/moxi_shape_black_corner_35"
+                android:gravity="center"
+                android:paddingLeft="@dimen/moxi_text_size_14dp"
+                android:paddingRight="@dimen/moxi_text_size_14dp"
+                android:text="向上移"
+                android:textColor="@color/colorWihte"
+                android:textSize="@dimen/moxi_text_size_24" />
+
+            <TextView
+                android:id="@+id/img_home_work_down"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:background="@drawable/moxi_shape_black_corner_35"
+                android:gravity="center"
+                android:paddingLeft="@dimen/moxi_text_size_14dp"
+                android:paddingRight="@dimen/moxi_text_size_14dp"
+                android:text="向下移"
+                android:textColor="@color/colorWihte"
+                android:textSize="@dimen/moxi_text_size_24" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.moxi.haierexams.view.SlideLinerlayout
+        android:id="@+id/slide_chose_liner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom_layout"
+        android:layout_below="@id/include"
+        android:layout_marginBottom="80dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tv_chose_exams_title_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_22"></TextView>
+
+        <com.moxi.haierexams.view.NoRadioGroup
+            android:id="@+id/radio_group_write_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_answer_1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWihte"
+                android:button="@null"
+                android:drawableLeft="@drawable/mx_selector_menu"
+                android:drawablePadding="10dp"
+                android:gravity="center_vertical"
+                android:minHeight="40dp"
+                android:text="A"
+                android:textColor="@color/colorBlack"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_answer_2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWihte"
+                android:button="@null"
+                android:drawableLeft="@drawable/mx_selector_menu"
+                android:drawablePadding="10dp"
+                android:minHeight="40dp"
+                android:text="B"
+                android:textColor="@color/colorBlack"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_answer_3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWihte"
+                android:button="@null"
+                android:drawableLeft="@drawable/mx_selector_menu"
+                android:drawablePadding="10dp"
+                android:minHeight="40dp"
+                android:text="C"
+                android:textColor="@color/colorBlack"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/radio_answer_4"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWihte"
+                android:button="@null"
+                android:drawableLeft="@drawable/mx_selector_menu"
+                android:drawablePadding="10dp"
+                android:minHeight="40dp"
+                android:text="D"
+                android:textColor="@color/colorBlack"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </com.moxi.haierexams.view.NoRadioGroup>
+
+        <TextView
+            android:id="@+id/tv_chose_exams_analysis_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_22" />
+    </com.moxi.haierexams.view.SlideLinerlayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_show_or_hide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/ll_bottom_layout"
+        android:layout_below="@id/include"
+        android:visibility="gone">
+
+        <com.moxi.haierexams.view.SlideLinerlayout
+            android:id="@+id/slide_liner_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <com.moxi.haierexams.view.NoRelativeLayout
+                android:id="@+id/no_relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_exams_title_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/moxi_text_size_22"></TextView>
+
+                <TextView
+                    android:id="@+id/tv_exams_analysis_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_exams_title_view"
+                    android:layout_marginTop="60dp"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="@dimen/moxi_text_size_22" />
+
+            </com.moxi.haierexams.view.NoRelativeLayout>
+        </com.moxi.haierexams.view.SlideLinerlayout>
+        <!--
+                <com.moxi.handwritinglibs.ScrollWritePadView
+                    android:id="@+id/pirv_home_work_achace"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                    -->
+        <com.moxi.handwritinglibs.ExameSurfaceViewDraw
+            android:id="@+id/pirv_home_work_achace"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+</RelativeLayout>

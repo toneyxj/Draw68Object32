@@ -1,0 +1,61 @@
+apply plugin: 'com.android.application'
+
+android {
+    signingConfigs {
+        release {
+            keyAlias 'archer'
+            keyPassword '111111'
+            storeFile file('F:/MX/Key.jks')
+            storePassword '111111'
+        }
+    }
+    compileSdkVersion project.ext.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.moxi.writeNote"
+        minSdkVersion project.ext.minSdkVersion
+        targetSdkVersion project.ext.targetSdkVersion
+        versionCode 233
+        versionName "ZXTopsirH68_2.3.3"
+//        ndk {
+//             设置支持的SO库架构
+//            abiFilters 'armeabi' //, 'x86', 'armeabi-v7a', 'x86_64', 'arm64-v8a'
+//        }
+//        multiDexEnabled true
+//        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.release
+        }
+    }
+//    packagingOptions {
+//        exclude 'META-INF/LICENSE'
+//    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestImplementation 'junit:junit:4.12'
+    implementation "com.android.support:appcompat-v7:${project.ext.supportLibraryVersion}"
+    annotationProcessor 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:7.0.1'
+    //    compile(name: 'OnyxAndroidSDK-release', ext: 'aar')
+//    implementation 'com.tencent.bugly:crashreport:latest.release'
+    //其中latest.release指代最新Bugly SDK版本号，也可以指定明确的版本号，例如2.1.9
+//    implementation 'com.tencent.bugly:nativecrashreport:latest.release'
+    //其中latest.release指代最新Bugly NDK版本号，也可以指定明确的版本号，例如3.0
+    implementation files('libs/itextpdf-5.5.10.jar')
+    implementation project(':handwritinglibs')
+    implementation project(':UIReferenceImplementation')
+}

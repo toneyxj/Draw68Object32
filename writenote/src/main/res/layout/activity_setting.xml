@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="11dp">
+
+        <TextView
+            android:id="@+id/back_item"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_to_font"
+            android:drawableLeft="@mipmap/back"
+            android:drawablePadding="10dp"
+            android:gravity="center_vertical"
+            android:text="@string/back_mian"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_left_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/setting"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+    <!--加密手写文件切换-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_main_height"
+        android:background="@color/colorGrayish"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_main_item_padding"
+        android:text="文件分区"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/setting_item_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="隐藏分区"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24dp" />
+
+        <FrameLayout
+            android:id="@+id/click_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Switch
+                android:id="@+id/switch_hide"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:gravity="center_vertical" />
+        </FrameLayout>
+    </LinearLayout>
+    <!--手写界面插入模式-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_main_height"
+        android:background="@color/colorGrayish"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_main_item_padding"
+        android:text="插入模式"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+
+    <TextView
+        android:id="@+id/last_insert"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_item_height"
+        android:drawableRight="@mipmap/have_select"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding"
+        android:text="前插模式"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/setting_son_item_padding"
+        android:layout_marginRight="@dimen/setting_son_item_padding"
+        android:background="@drawable/oon_line" />
+
+    <TextView
+        android:id="@+id/next_insert"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_item_height"
+        android:drawableRight="@mipmap/have_select"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding"
+        android:text="后插模式"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+    <!--画板背景设置-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_main_height"
+        android:background="@color/colorGrayish"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_main_item_padding"
+        android:visibility="gone"
+        android:text="画板背景"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+
+    <TextView
+        android:id="@+id/single_repleace"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_item_height"
+        android:drawableRight="@mipmap/have_select"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding"
+        android:visibility="gone"
+        android:text="单页替换"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:layout_marginLeft="@dimen/setting_son_item_padding"
+        android:layout_marginRight="@dimen/setting_son_item_padding"
+        android:background="@drawable/oon_line" />
+
+    <TextView
+        android:id="@+id/total_repleace"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_item_height"
+        android:visibility="gone"
+        android:drawableRight="@mipmap/have_select"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding"
+        android:text="整体替换"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_24dp" />
+    <!--手写文件导出-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/setting_main_height"
+        android:background="@color/colorGrayish"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/setting_main_item_padding"
+        android:text="手写导出"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_26dp" />
+
+    <LinearLayout
+        android:id="@+id/photo_export"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/setting_item_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="图片导出路径"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24dp" />
+
+        <TextView
+            android:id="@+id/photo_export_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="/sd"
+            android:textColor="@color/color_normal"
+            android:textSize="@dimen/moxi_text_size_22dp" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/setting_son_item_padding"
+        android:layout_marginRight="@dimen/setting_son_item_padding"
+        android:background="@drawable/oon_line" />
+
+    <LinearLayout
+        android:id="@+id/pdf_export"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:minHeight="@dimen/setting_item_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/setting_son_item_padding"
+        android:paddingRight="@dimen/setting_son_item_padding">
+
+        <TextView
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="PDF导出路径"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/moxi_text_size_24dp" />
+
+        <TextView
+            android:id="@+id/pdf_export_path"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="/sd"
+            android:textColor="@color/color_normal"
+            android:textSize="@dimen/moxi_text_size_22dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/setting_son_item_padding"
+        android:layout_marginRight="@dimen/setting_son_item_padding"
+        android:background="@drawable/oon_line" />
+</LinearLayout>

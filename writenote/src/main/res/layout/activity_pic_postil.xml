@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.moxi.writeNote.view.InterceptView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/onclick_main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/colorWihte"
+        android:orientation="horizontal">
+        <!--save_logo-->
+        <TextView
+            android:id="@+id/quit_pic_postil"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/white_to_font"
+            android:drawableLeft="@mipmap/back"
+            android:drawablePadding="8dp"
+            android:gravity="center"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp"
+            android:text="保存"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_left_size"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/title_postil"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:lines="1"
+            android:text="新文档"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_size"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/rubber_"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_50"
+            android:background="@drawable/white_to_font"
+            android:layout_gravity="center_vertical"
+            android:textColor="@color/colorBlack"
+            android:textSize="@dimen/title_right_size"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:gravity="center"
+            android:text="铅笔"
+            android:layout_marginRight="12dp"/>
+        <ImageButton
+            android:id="@+id/setting"
+            android:layout_width="@dimen/height_50"
+            android:layout_height="@dimen/height_50"
+            android:background="@drawable/white_to_font"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="12dp"
+            android:src="@mipmap/setting1"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/color_line" />
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1" >
+    <com.moxi.handwritinglibs.DrawView.MxImageView
+        android:id="@+id/back_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.moxi.handwritinglibs.BaseSurfaceViewDraw
+        android:id="@+id/write_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true" />
+</RelativeLayout>
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:visibility="gone"
+        android:background="@color/color_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_100"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <com.mx.mxbase.view.WriteDrawLayout
+                android:id="@+id/rubber"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_to_font" />
+
+            <com.mx.mxbase.view.WriteDrawLayout
+                android:id="@+id/pen"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/white_to_font" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <RadioGroup
+                android:id="@+id/pen_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/pen0"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen0" />
+
+                <RadioButton
+                    android:id="@+id/pen1"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen1" />
+
+                <RadioButton
+                    android:id="@+id/pen2"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen2" />
+
+                <RadioButton
+                    android:id="@+id/pen3"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen3" />
+
+                <RadioButton
+                    android:id="@+id/pen4"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen4" />
+
+                <RadioButton
+                    android:id="@+id/pen5"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen5" />
+
+                <RadioButton
+                    android:id="@+id/pen6"
+                    style="@style/pen_radio_group"
+                    android:drawableLeft="@drawable/pen_setting" />
+
+            </RadioGroup>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.moxi.writeNote.view.InterceptView>

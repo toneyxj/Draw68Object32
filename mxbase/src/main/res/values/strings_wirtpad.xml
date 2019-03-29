@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="main_name">手写笔记本</string>
+    <string name="back_mian">返回</string>
+    <string name="re_name">重命名</string>
+    <string name="setting_page_stype">设置/</string>
+    <string name="new_floder">新建文件夹</string>
+    <string name="draw_flag">添加手写页标识</string>
+    <string name="select">选择</string>
+    <string name="new_file">新增界面</string>
+    <string name="quit">取消</string>
+    <string name="insure">确认</string>
+    <string name="delete">删除</string>
+    <string name="move">移动</string>
+    <string name="setting">设置</string>
+    <string name="descibe">详情</string>
+    <string name="copy">复制</string>
+    <string name="paste">粘贴</string>
+    <string name="file_seelct">文件选取</string>
+
+    <string name="practise_calligraphy">练生字</string>
+    <string name="primary_practise_calligraphy">小学生需要掌握的文字</string>
+    <string name="middle_practise_calligraphy">中学生需要掌握的文字</string>
+    <string name="last_group">上一组</string>
+    <string name="next_group">下一组</string>
+    <string name="last_one">上一个</string>
+    <string name="next_one">下一个</string>
+
+    <string name="file_manager">文件管理器</string>
+    <string name="search_file">搜索文档</string>
+    <string name="manager">管理</string>
+    <string name="search">搜索</string>
+    <string name="sort_name">按名称</string>
+    <string name="sort_big">按大小</string>
+    <string name="sort_type">按类型</string>
+    <string name="sort_create_time">按创建时间</string>
+    <string name="double_select">批量管理</string>
+    <string name="internal_memory">内部存储</string>
+    <string name="exteral_memory">外部存储</string>
+    <string name="all_file">全部</string>
+    <string name="document">文档</string>
+    <string name="picture">图片</string>
+    <string name="other">其他</string>
+    <string name="save_storage">存储器</string>
+    <string name="souye">首页</string>
+    <string name="set_time">设置时间</string>
+</resources>
