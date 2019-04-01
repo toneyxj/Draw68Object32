@@ -86,7 +86,9 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
 
     @Override
     public void onActivityDestroyed(Activity activity) {
-
+        if (inputDialog != null && inputDialog.isShowing()) {
+            inputDialog.dismiss();
+        }
     }
 
     @Override
@@ -142,7 +144,7 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
                         ToastUtils.getInstance().showToastShort("文件名已存在，请重新命名");
                         return;
                     }
-                    saveNote(note,file.getAbsolutePath());
+                    saveNote(note, file.getAbsolutePath());
                     if (inputDialog != null && inputDialog.isShowing()) {
                         inputDialog.dismiss();
                     }
@@ -150,12 +152,12 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
             });
 
         } catch (Exception e) {
-
+            e.printStackTrace();
         }
     }
 
     public void saveNote(final String note, final String path) {
-        dialogShowOrHide(true,"");
+        dialogShowOrHide(true, "");
         new Thread(new Runnable() {
             @Override
             public void run() {
@@ -170,11 +172,13 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        dialogShowOrHide(false,"");
-                        if (finalIs){
-                            insureDialog("笔记保存于："+path, "确定", true, null);
-                        }else {
-                            ToastUtils.getInstance().showToastShort( "笔记保存失败！");
+                        if (isfinish) return;
+                        dialogShowOrHide(false, "");
+                        String save = path.replace(StringUtils.getSDCardPath(), "");
+                        if (finalIs) {
+                            insureDialog("提示","笔记保存于：" + save, "确定",1, true, null);
+                        } else {
+                            ToastUtils.getInstance().showToastShort("笔记保存失败！");
                         }
 
                     }

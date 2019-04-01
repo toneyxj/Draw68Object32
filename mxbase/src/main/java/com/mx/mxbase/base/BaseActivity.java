@@ -342,9 +342,9 @@ public abstract class BaseActivity extends FragmentActivity implements ActivityL
      * @param code
      * @param listener
      */
-    public void insureDialog(String hitn,String content,String insure, final Object code, final InsureOrQuitListener listener){
+    public void insureDialog(String hitn,String content,String insure, final Object code, boolean canlable,final InsureOrQuitListener listener){
         //没有问题可以进行移动
-        alertDialog= new AlertDialog(this).builder().setTitle(hitn).setCancelable(false).setMsg(content).
+        alertDialog= new AlertDialog(this).builder().setTitle(hitn).setCancelable(canlable).setMsg(content).
                 setNegativeButton(insure, new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
