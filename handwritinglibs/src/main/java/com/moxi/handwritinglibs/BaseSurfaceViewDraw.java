@@ -155,6 +155,10 @@ public class BaseSurfaceViewDraw extends SurfaceView implements SurfaceHolder.Ca
         getPenControl().setCanDraw(can);
     }
 
+    public void isdelayInit(boolean is){
+        if (getPenControl()==null)return ;
+         getPenControl().isdelayInit=is;
+    }
     public boolean isDrawUp() {
         if (getPenControl()==null)return false;
         return getPenControl().drawUp;

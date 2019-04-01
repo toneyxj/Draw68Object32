@@ -294,8 +294,8 @@ public class NewActivity extends WriteBaseActivity implements View.OnClickListen
             @Override
             public void onChangeSucess(String value) {
                 dialogShowOrHide(false, "");
-                APPLog.e("onChangeSucess:" + value);
                 write_view.setCanDraw(false, 6);
+                write_view.isdelayInit(true);
                 EditeTextActivity.startEditeTextActivity(NewActivity.this,value);
             }
 
