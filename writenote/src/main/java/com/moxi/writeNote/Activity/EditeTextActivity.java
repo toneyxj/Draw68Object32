@@ -10,37 +10,46 @@ import android.widget.EditText;
 
 import com.moxi.writeNote.R;
 import com.moxi.writeNote.WriteBaseActivity;
+import com.moxi.writeNote.config.ConfigerUtils;
+import com.mx.mxbase.dialog.InputDialog;
+import com.mx.mxbase.utils.FileUtils;
+import com.mx.mxbase.utils.StringUtils;
 import com.mx.mxbase.utils.ToastUtils;
+
+import java.io.File;
 
 public class EditeTextActivity extends WriteBaseActivity implements View.OnClickListener {
 
-    public static void startEditeTextActivity(@NonNull Context context,@NonNull String obj) {
-        if (obj==null||obj.isEmpty())return;
-        Intent intent=new Intent(context,EditeTextActivity.class);
-        Bundle bundle=new Bundle();
-        bundle.putString("value",obj);
+    public static void startEditeTextActivity(@NonNull Context context, @NonNull String obj) {
+        if (obj == null || obj.isEmpty()) return;
+        Intent intent = new Intent(context, EditeTextActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("value", obj);
         intent.putExtras(bundle);
         context.startActivity(intent);
     }
 
+    private InputDialog inputDialog;
     private long clickTime = 0;
 
     @Override
     protected int getMainContentViewId() {
         return R.layout.activity_edite_text;
     }
+
     private EditText edit_txt;
-    private String value="";
+    private String value = "";
+
     @Override
     public void onActivityCreated(Activity activity, Bundle savedInstanceState) {
         findViewById(R.id.show_title).setOnClickListener(this);
         findViewById(R.id.save_txt).setOnClickListener(this);
-        edit_txt=findViewById(R.id.edit_txt);
+        edit_txt = findViewById(R.id.edit_txt);
 
-        if (savedInstanceState ==null){
-            savedInstanceState=getIntent().getExtras();
+        if (savedInstanceState == null) {
+            savedInstanceState = getIntent().getExtras();
         }
-        value=savedInstanceState.getString("value");
+        value = savedInstanceState.getString("value");
 
         edit_txt.setText(value);
     }
@@ -67,7 +76,7 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
 
     @Override
     public void onActivitySaveInstanceState(Bundle outState) {
-        outState.putString("value",value);
+        outState.putString("value", value);
     }
 
     @Override
@@ -93,14 +102,13 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
                 break;
             case R.id.save_txt://保存
                 try {
-                    String value=edit_txt.getText().toString().trim();
-                    if (value.isEmpty()){
+                    String value = edit_txt.getText().toString().trim();
+                    if (value.isEmpty()) {
                         ToastUtils.getInstance().showToastShort("当前文本为空");
                         return;
                     }
-
-
-                }catch (Exception e){
+                    setSaveName(value);
+                } catch (Exception e) {
                     e.printStackTrace();
                     ToastUtils.getInstance().showToastShort(e.getMessage());
                 }
@@ -108,5 +116,70 @@ public class EditeTextActivity extends WriteBaseActivity implements View.OnClick
             default:
                 break;
         }
+    }
+
+    private void setSaveName(final String note) {
+        try {
+            final File fm = new File(StringUtils.getSDPath() + "note/");
+            if (!fm.exists()) {
+                fm.mkdirs();
+            }
+            inputDialog = InputDialog.getdialog(this, getString(R.string.file_name), ConfigerUtils.hitnInput, false, new InputDialog.InputListener() {
+
+                @Override
+                public void quit() {
+
+                }
+
+                @Override
+                public void insure(String name) {
+                    if (name.equals("")) {
+                        return;
+                    }
+                    if (ConfigerUtils.isFail(name)) return;
+                    File file = new File(fm, name + ".txt");
+                    if (file.exists()) {
+                        ToastUtils.getInstance().showToastShort("文件名已存在，请重新命名");
+                        return;
+                    }
+                    saveNote(note,file.getAbsolutePath());
+                    if (inputDialog != null && inputDialog.isShowing()) {
+                        inputDialog.dismiss();
+                    }
+                }
+            });
+
+        } catch (Exception e) {
+
+        }
+    }
+
+    public void saveNote(final String note, final String path) {
+        dialogShowOrHide(true,"");
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                boolean is = false;
+                try {
+                    is = FileUtils.getInstance().writeFile(path, note);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+                final boolean finalIs = is;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        dialogShowOrHide(false,"");
+                        if (finalIs){
+                            insureDialog("笔记保存于："+path, "确定", true, null);
+                        }else {
+                            ToastUtils.getInstance().showToastShort( "笔记保存失败！");
+                        }
+
+                    }
+                });
+            }
+        }).start();
     }
 }

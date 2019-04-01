@@ -3,6 +3,7 @@
     <string name="main_name">手写笔记本</string>
     <string name="back_mian">返回</string>
     <string name="re_name">重命名</string>
+    <string name="file_name">文件名</string>
     <string name="setting_page_stype">设置/</string>
     <string name="new_floder">新建文件夹</string>
     <string name="draw_flag">添加手写页标识</string>
