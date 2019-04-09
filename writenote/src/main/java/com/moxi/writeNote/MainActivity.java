@@ -1,6 +1,7 @@
 package com.moxi.writeNote;
 
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.graphics.drawable.BitmapDrawable;
@@ -37,6 +38,8 @@ import com.moxi.writeNote.config.ConfigInfor;
 import com.moxi.writeNote.config.ConfigerUtils;
 import com.moxi.writeNote.listener.PasteListener;
 import com.moxi.writeNote.popwin.SortStylePopwin;
+import com.moxi.writeNote.share.ContentBuilderInterface;
+import com.moxi.writeNote.share.ContentUtils;
 import com.moxi.writeNote.sortUtils.SortName;
 import com.moxi.writeNote.utils.MoveFileConfig;
 import com.moxi.writeNote.utils.PDFCreateRunalbe;
@@ -45,6 +48,7 @@ import com.moxi.writeNote.utils.UserInformation;
 import com.mx.mxbase.base.MyApplication;
 import com.mx.mxbase.constant.APPLog;
 import com.mx.mxbase.dialog.InputDialog;
+import com.mx.mxbase.dialog.ListDialog;
 import com.mx.mxbase.interfaces.InsureOrQuitListener;
 import com.mx.mxbase.utils.FileUtils;
 import com.mx.mxbase.utils.StringUtils;
@@ -723,6 +727,7 @@ private long initAdapterTime=0;
 
         TextView export_pdf = (TextView) contentView.findViewById(R.id.export_pdf);
         TextView export_photo = (TextView) contentView.findViewById(R.id.export_photo);
+        TextView share_photo = (TextView) contentView.findViewById(R.id.share_photo);
         TextView delete = (TextView) contentView.findViewById(R.id.delete);
         TextView rename = (TextView) contentView.findViewById(R.id.rename);
         TextView setting_page = (TextView) contentView.findViewById(R.id.setting_page);
@@ -746,6 +751,7 @@ private long initAdapterTime=0;
 
         export_pdf.setTag(position);
         export_photo.setTag(position);
+        share_photo.setTag(position);
         rename.setTag(position);
         delete.setTag(position);
 
@@ -753,6 +759,7 @@ private long initAdapterTime=0;
 
         export_pdf.setOnClickListener(onfile);
         export_photo.setOnClickListener(onfile);
+        share_photo.setOnClickListener(onfile);
         delete.setOnClickListener(onfile);
         rename.setOnClickListener(onfile);
         setting_page.setOnClickListener(onfile);
@@ -778,6 +785,7 @@ private long initAdapterTime=0;
             int position =  Integer.parseInt(v.getTag().toString());
             WritPadModel model = middleModels.get(position);
             switch (v.getId()) {
+                case R.id.share_photo://分享图片到平台
                 case R.id.export_pdf://导出pdf文件
                     if (!StringUtils.haveSD(80)) {
                         String pdfPath = getPDFExportPath();
@@ -787,7 +795,7 @@ private long initAdapterTime=0;
                         File file = new File(pdfPath);
                         if (file == null) return;
                         String name = getNoName(file.getAbsolutePath(), String.valueOf(System.currentTimeMillis()));
-                        exportFile(file, name, model, true);
+                        exportFile(file, name, model, true,v.getId()==R.id.share_photo);
                     }
                     break;
                 case R.id.export_photo://导出图片
@@ -798,7 +806,7 @@ private long initAdapterTime=0;
                         }
                         File file = new File(photoPath);
                         if (file == null) return;
-                        exportFile(file, model.name, model, false);
+                        exportFile(file, model.name, model, false,false);
                     }
                     break;
                 case R.id.rename://重命名
@@ -843,7 +851,7 @@ private long initAdapterTime=0;
         return file1.exists();
     }
 
-    public void exportFile(final File file, String name, final WritPadModel model, final boolean isExportPdf) {
+    public void exportFile(final File file, String name, final WritPadModel model, final boolean isExportPdf, final boolean isShare) {
         boolean is = ConfigerUtils.isFail(name);
         if (isExist(file, name) || is) {
             if (!is)
@@ -856,7 +864,7 @@ private long initAdapterTime=0;
 
                 @Override
                 public void insure(String name) {
-                    exportFile(file, name, model, isExportPdf);
+                    exportFile(file, name, model, isExportPdf,isShare);
                 }
             });
         } else {
@@ -875,31 +883,36 @@ private long initAdapterTime=0;
                     }
 
                     if (is && isExportPdf) {
-                        //导出pdf文件
+                        if (isShare) {
+                            dialogShowOrHide(false, "");
+                            selectShare(model.name,filePath);
+                        } else {
+                            //导出pdf文件
 //                        dialogShowOrHide(true, "pdf文件生成中...",15);
-                        new Thread(new PDFCreateRunalbe(filePath, getPdfPath(file, model.name, 0), true, new PDFCreateRunalbe.PDFCreateListener() {
-                            @Override
-                            public void onFinish() {
-                                if (isfinish) return;
-                                dialogShowOrHide(false, "");
-                                String dir = (new File(getPDFExportPath())).getName();
-                                ToastUtils.getInstance().showToastShort("Pdf文件已导入" + dir + "目录");
-                            }
+                            new Thread(new PDFCreateRunalbe(filePath, getPdfPath(file, model.name, 0), true, new PDFCreateRunalbe.PDFCreateListener() {
+                                @Override
+                                public void onFinish() {
+                                    if (isfinish) return;
+                                    dialogShowOrHide(false, "");
+                                    String dir = (new File(getPDFExportPath())).getName();
+                                    ToastUtils.getInstance().showToastShort("Pdf文件已导入" + dir + "目录");
+                                }
 
-                            @Override
-                            public void onFail(String msg) {
-                                if (isfinish) return;
-                                dialogShowOrHide(false, "");
-                                ToastUtils.getInstance().showToastShort(msg);
-                            }
+                                @Override
+                                public void onFail(String msg) {
+                                    if (isfinish) return;
+                                    dialogShowOrHide(false, "");
+                                    ToastUtils.getInstance().showToastShort(msg);
+                                }
 
-                            @Override
-                            public void onProgressHitn(String hitn) {
-                                if (isfinish) return;
-                                dialogText(hitn);
-                            }
-                        })).start();
+                                @Override
+                                public void onProgressHitn(String hitn) {
+                                    if (isfinish) return;
+                                    dialogText(hitn);
+                                }
+                            })).start();
 
+                        }
                     }
                 }
 
@@ -911,7 +924,34 @@ private long initAdapterTime=0;
         }
     }
 
+    private void selectShare(final String title, final String path) {
 
+        ListDialog.getdialog(this, "请选择分享笔记平台", new ListDialog.ClickListItemListener() {
+            @Override
+            public void onClickItem(final int position) {
+                ContentBuilderInterface content = null;
+                //笔记内容拼接
+                if (position == 0) {//印象笔记
+                    Bundle bundle = new Bundle();
+                    bundle.putString("title", title);
+                    bundle.putString("content", path);
+                    bundle.putString("noteBook", ContentUtils.NoteShareDescribe);
+                    bundle.putInt("shareType", 2);
+                    bundle.putInt("sdkType", position + 1);
+
+                    Intent intent = new Intent();
+                    ComponentName cnInput = new ComponentName("com.moxi.biji", "com.moxi.biji.BijiActivity");
+                    intent.setComponent(cnInput);
+//                                Intent intent=new Intent("com.moxi.biji.start");
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                } else {//有道笔记
+                    ToastUtils.getInstance().showToastShort("暂未开发...");
+                }
+
+            }
+        }, "印象笔记", "有道云笔记");
+    }
     public String getNoName(String floder, String name) {
         File file = new File(floder, name);
         if (file.exists()) {

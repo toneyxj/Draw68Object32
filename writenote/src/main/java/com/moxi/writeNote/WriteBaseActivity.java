@@ -162,5 +162,6 @@ public abstract class WriteBaseActivity extends BaseActivity implements UpLogInf
 //            }
 //        });
     }
+
 }
 

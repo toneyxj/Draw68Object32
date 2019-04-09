@@ -34,6 +34,18 @@
         android:textColor="@color/colorBlack"
         android:textSize="@dimen/moxi_text_size_20" />
     <TextView
+        android:id="@+id/share_photo"
+        android:layout_width="match_parent"
+        android:gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="12dp"
+        android:padding="16dp"
+        android:background="@drawable/white_to_font"
+        android:text="分享笔记"
+        android:textColor="@color/colorBlack"
+        android:textSize="@dimen/moxi_text_size_20" />
+    <TextView
         android:id="@+id/delete"
         android:layout_width="match_parent"
         android:gravity="center_horizontal"
