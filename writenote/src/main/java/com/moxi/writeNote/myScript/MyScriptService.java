@@ -13,6 +13,7 @@ import com.moxi.handwritinglibs.model.WriteModel.WPoint;
 import com.moxi.handwritinglibs.model.WriteModel.WritePageData;
 import com.moxi.writeNote.listener.ChangeToTextListener;
 import com.moxi.writeNote.myScript.exception.NullPointerExceptionEngine;
+import com.mx.mxbase.constant.APPLog;
 import com.myscript.iink.Configuration;
 import com.myscript.iink.ContentPackage;
 import com.myscript.iink.ContentPart;
@@ -154,6 +155,7 @@ public class MyScriptService {
                     for (int i = 0; i <size ; i++) {
                         addCoordinate(data.mainLines.get(i));
                     }
+                    APPLog.e("scriptManager-inertend",System.currentTimeMillis());
                 }catch (Exception e){
                     e.printStackTrace();
                     if (listener!=null){

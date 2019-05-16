@@ -278,7 +278,7 @@ public class PenControl implements View.OnTouchListener {
                 public void run() {
                     init_handwrite();
                 }
-            },300);
+            },150);
         }
         else {
             init_handwriteC();

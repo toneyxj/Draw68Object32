@@ -80,7 +80,9 @@
             android:launchMode="singleTask"
             android:screenOrientation="nosensor"
             android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"></activity>
-        <activity android:name=".Activity.EditeTextActivity"></activity>
+        <activity
+            android:name=".Activity.EditeTextActivity"
+            android:theme="@android:style/Theme.Light.NoTitleBar.Fullscreen"></activity>
     </application>
 
 </manifest>

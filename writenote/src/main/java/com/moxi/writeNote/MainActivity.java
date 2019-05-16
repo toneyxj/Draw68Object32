@@ -931,7 +931,7 @@ private long initAdapterTime=0;
             public void onClickItem(final int position) {
                 ContentBuilderInterface content = null;
                 //笔记内容拼接
-                if (position == 0) {//印象笔记
+//                if (position == 0) {//印象笔记
                     Bundle bundle = new Bundle();
                     bundle.putString("title", title);
                     bundle.putString("content", path);
@@ -945,9 +945,9 @@ private long initAdapterTime=0;
 //                                Intent intent=new Intent("com.moxi.biji.start");
                     intent.putExtras(bundle);
                     startActivity(intent);
-                } else {//有道笔记
-                    ToastUtils.getInstance().showToastShort("暂未开发...");
-                }
+//                } else {//有道笔记
+//                    ToastUtils.getInstance().showToastShort("暂未开发...");
+//                }
 
             }
         }, "印象笔记", "有道云笔记");
